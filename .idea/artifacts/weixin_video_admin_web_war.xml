@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="weixin-video-admin-web:war">
+    <output-path>$PROJECT_DIR$/weixin-video-admin-web/target</output-path>
+    <root id="archive" name="weixin-video-admin-web.war">
+      <element id="artifact" artifact-name="weixin-video-admin-web:war exploded" />
+    </root>
+  </artifact>
+</component>

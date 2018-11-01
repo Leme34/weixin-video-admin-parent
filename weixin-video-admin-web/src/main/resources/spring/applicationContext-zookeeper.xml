@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<description>zookeeper 放入spring容器，项目启动加载的时候就建立和zk的连接</description>
+
+	<!-- 创建重连策略对象注入容器 -->
+	<bean id="retryPolicy" class="org.apache.curator.retry.ExponentialBackoffRetry">
+		<!-- 每次重试连接的等待时间，index=0:第0个参数 -->
+		<constructor-arg index="0" value="1000"></constructor-arg>
+		<!-- 设置的重连的次数，index=1:第1个参数 -->
+		<constructor-arg index="1" value="5"></constructor-arg>
+	</bean>
+
+	<!-- 调用构造方法newClient(..)创建zookeeper客户端对象注入容器
+	 	 调用初始化方法start启动客户端 -->
+	<bean id="client" class="org.apache.curator.framework.CuratorFrameworkFactory"
+		  factory-method="newClient" init-method="start">
+		<!-- 若是zk集群地址之间使用","间隔即可 -->
+		<constructor-arg index="0" value="192.168.11.101:2181"></constructor-arg>
+		<constructor-arg index="1" value="10000"></constructor-arg>
+		<constructor-arg index="2" value="10000"></constructor-arg>
+		<!-- 传入上边注入的retryPolicy对象 -->
+		<constructor-arg index="3" ref="retryPolicy"></constructor-arg>
+	</bean>
+
+	<!-- 注入客户端配置类 -->
+	<!-- init-method="init" :调用初始化方法init -->
+	<bean id="ZKCurator" class="com.lee.utils.ZKCurator" init-method="init">
+		<!-- 传入上边注入的client对象 -->
+		<constructor-arg index="0" ref="client"></constructor-arg>
+	</bean>
+
+
+</beans>

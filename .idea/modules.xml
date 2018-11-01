@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/weixin-video-admin-common/weixin-video-admin-common.iml" filepath="$PROJECT_DIR$/weixin-video-admin-common/weixin-video-admin-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixin-video-admin-mapper/weixin-video-admin-mapper.iml" filepath="$PROJECT_DIR$/weixin-video-admin-mapper/weixin-video-admin-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixin-video-admin-parent.iml" filepath="$PROJECT_DIR$/weixin-video-admin-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixin-video-admin-pojo/weixin-video-admin-pojo.iml" filepath="$PROJECT_DIR$/weixin-video-admin-pojo/weixin-video-admin-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixin-video-admin-service/weixin-video-admin-service.iml" filepath="$PROJECT_DIR$/weixin-video-admin-service/weixin-video-admin-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixin-video-admin-web/weixin-video-admin-web.iml" filepath="$PROJECT_DIR$/weixin-video-admin-web/weixin-video-admin-web.iml" />
+    </modules>
+  </component>
+</project>
